@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Form</title>
+    <style>
+      /* Typography */
+      body {
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        color: #333;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        font-size: 2em;
+        font-weight: bold;
+        color: #4CAF50;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      p, label, legend {
+        font-weight: 500;
+        font-size: 1.1em;
+        color: #555;
+      }
+
+      /* Layout */
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      form {
+        background-color: #ffffff;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      fieldset {
+        border-color: #4CAF50;
+        border-width: 2px;
+        border-style: solid;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="date"],
+      input[type="color"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        font-size: 1em;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        font-size: 1em;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      /* Results Display */
+      #display {
+        font-size: 1.2em;
+        color: #333;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: 2px solid #e0e0e0;
+        border-radius: 5px;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #777;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>My First Form</h1>
+    </header>
+
+    <main>
+      <form>
+        <fieldset>
+          <legend>Please enter your information:</legend>
+
+          <p>
+            <label>
+              What is your name? <br>
+              <input type="text" name="firstname">
+            </label>
+          </p>
+
+          <p>
+            <label>
+              What is your email address? <br>
+              <input type="email" name="email">
+            </label>
+          </p>
+
+          <p>
+            <label>
+              How many siblings do you have? <br>
+              <input type="number" name="siblings" min="0" max="10">
+            </label>
+          </p>
+
+          <p>
+            <label>
+              When were you born? <br>
+              <input type="date" name="birthdate">
+            </label>
+          </p>
+
+          <p>
+            <label>
+              What is your favorite beverage? <br>
+              <select name="beverage">
+                <option value="coffee">Coffee</option>
+                <option value="tea">Tea</option>
+              </select>
+            </label>
+          </p>
+
+          <p>
+            <label>
+              What is your favorite color? <br>
+              <input type="color" name="fave-color">
+            </label>
+          </p>
+
+          <p>
+            Which is your favorite animal? Select only one. <br>
+            <label>
+              <input type="radio" name="fave-animal" value="dogs"> Dogs
+            </label>
+            <label>
+              <input type="radio" name="fave-animal" value="cats"> Cats
+            </label>
+          </p>
+
+          <p>
+            Which hobbies do you enjoy? Select all that apply. <br>
+            <label>
+              <input type="checkbox" name="hobby" value="hiking"> Hiking
+            </label>
+            <label>
+              <input type="checkbox" name="hobby" value="music"> Music
+            </label>
+            <label>
+              <input type="checkbox" name="hobby" value="video-games"> Video Games
+            </label>
+          </p>
+
+          <p>
+            <input type="submit" value="Submit My Answers!">
+          </p>
+        </fieldset>
+      </form>
+      <p id="display"></p>
+    </main>
+
+    <script>
+		const form = document.querySelector('form')
+		form.addEventListener('submit', (e) => {
+			e.preventDefault()
+
+			const text = document.querySelector('input[name=firstname]')
+			const email = document.querySelector('input[name=email]')
+			const number = document.querySelector('input[name=siblings]')
+			const date = document.querySelector('input[name=birthdate]')
+			const select = document.querySelector('select[name=beverage]')
+			const color = document.querySelector('input[name=fave-color]')
+			
+			let pet = ''
+			const radio = Array.from(document.querySelectorAll('input[name=fave-animal]'))
+			radio.forEach((b) => {
+				if (b.checked) {
+					pet = b.value
+				}
+			})
+
+			let hobbies = ''
+			const checkbox = Array.from(document.querySelectorAll('input[name=hobby]'))
+			checkbox.forEach((b) => {
+				if (b.checked) {
+					hobbies += b.value + ' '
+				}
+			})
+
+			const results = `${text.value} is an amazing developer with ${number.value} siblings, born in ${date.value} who drinks ${select.value} from a ${color.value} coffee mug with ${pet} by their side, while they work on ${hobbies}`
+			document.getElementById('display').innerHTML = results
+			console.log(results);
+		});
+	</script>
+
+  </body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giphy Form</title>
+    <style>
+      /* Typography */
+      body {
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        color: #333;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        font-size: 2em;
+        color: #0288D1;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      p, label {
+        font-weight: 500;
+      }
+
+      /* Layout */
+      #form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px auto;
+        padding: 20px;
+        max-width: 400px;
+        background-color: #ffffff;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+
+      input[type="text"], input[type="range"], select, input[type="radio"], input[type="checkbox"] {
+        margin-bottom: 15px;
+        font-size: 1em;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+        border: 2px solid #0288D1;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+
+      button {
+        background-color: #0288D1;
+        color: white;
+        padding: 10px 15px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      button:hover {
+        background-color: #03A9F4;
+      }
+
+      /* Results Section */
+      #results {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 15px;
+        margin: 30px auto;
+        padding: 20px;
+        max-width: 1200px;
+        background-color: #ffffff;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+      }
+
+      #results img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #results div {
+        text-align: center;
+        padding: 10px;
+        background-color: #f4f4f4;
+        border-radius: 5px;
+      }
+
+      #results p {
+        font-size: 1em;
+        font-weight: bold;
+        color: #0288D1;
+        margin-top: 10px;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #777;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Giphy Search</h1>
+
+    <form id="form">
+      <p>
+        <label>
+          Search
+          <input type="text" id="giphy-search">
+        </label>
+      </p>
+
+      <p>
+        <label>
+          <input type="radio" name="size" value="fixed_height">
+          Fixed Height
+        </label>
+        <label>
+          <input type="radio" name="size" value="fixed_height_small">
+          Fixed Height Small
+        </label>
+        <label>
+          <input type="radio" name="size" value="fixed_height_small_still">
+          Fixed Height Small Still
+        </label>
+      </p>
+
+      <p>
+        <label>
+          <input type="checkbox" id="cats-only">
+          Cats Only
+        </label>
+      </p>
+
+      <p>
+        <label>
+          <input type="checkbox" id="show-title">
+          Show Title
+        </label>
+      </p>
+
+      <p>
+        <label>
+          Number of Images:
+          <input type="range" id="image-count" min="1" max="10" value="3">
+        </label>
+      </p>
+
+      <p>
+        <button type="submit">Submit</button>
+      </p>
+    </form>
+
+    <div id="results">
+      <!-- Giphy Data -->
+    </div>
+
+    <footer>
+      <p>Powered by Giphy API</p>
+    </footer>
+
+    <script>
+      // No need to edit below this point
+      const form = document.getElementById('form')
+      const results = document.getElementById('results')
+      const giphySearch = document.getElementById('giphy-search')
+      
+      form.onsubmit = (e) => {
+        e.preventDefault()
+        const search = giphySearch.value
+        fetchData(search)
+      }
+
+      function fetchData(q = 'cats') {
+        let catsOnly = false
+
+        if (document.getElementById('cats-only') !== null) {
+          catsOnly = document.getElementById('cats-only').checked 
+        }
+
+        const search = catsOnly ? 'cats '+q : q
+        const api = '3sjrF3zZatafCQZ4pRCCuf5zoOfsctBm'
+        const path = `https://api.giphy.com/v1/gifs/search?api_key=${api}&q=${search}`
+        fetch(path)
+        .then(res => res.json())
+        .then(json => handleData(json))
+        .catch(err => handleErr(err))
+      }
+
+      function handleData(json) {
+        let showTitle = false
+        if (document.getElementById('show-title') !== null) {
+          showTitle = document.getElementById('show-title').checked
+        }
+        
+        let size = 'fixed_height'
+        try {
+          size = Array.from(document.getElementsByName('size')).filter(item => item.checked)[0].value
+        } catch {
+          // 
+        }
+
+        let count = 3
+        try {
+          count = document.getElementById('image-count').value
+        } catch {
+          // 
+        }
+
+        let str = ''
+        for (let i = 0; i < count; i += 1) {
+          const src = json.data[i].images[size].url
+          let title = ''
+          if (showTitle) {
+            title = json.data[i].title
+          }
+          str += `
+          <div>
+            <img src="${src}">
+            <p>${title}</p>
+          </div>`
+        }
+        
+        results.innerHTML = str
+      }
+
+      function handleErr(err) {
+        console.log(err.message)
+      }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My First Form</title>
+  </head>
+  <body>
+
+    <header>
+      <h1>My First Form</h1>
+    </header>
+
+    <main>
+      <form>
+        <fieldset>
+          <legend>Please enter your information:</legend>
+
+          <p>
+            <label>
+              What is your name? <br>
+              <input type="text" name="firstname">
+            </label>
+          </p>
+
+          <p>
+            <label>
+              What is your email address? <br>
+              <input type="email" name="email">
+            </label>
+          </p>
+
+          <p>
+            <label>
+              How many siblings do you have? <br>
+              <input type="number" name="siblings" min="0" max="10">
+            </label>
+          </p>
+
+          <p>
+            <label>
+              When were you born? <br>
+              <input type="date" name="birthdate">
+            </label>
+          </p>
+
+          <p>
+            <label>
+              What is your favorite beverage? <br>
+              <select name="beverage">
+                <option value="coffee">Coffee</option>
+                <option value="tea">Tea</option>
+              </select>
+            </label>
+          </p>
+
+          <p>
+            <label>
+              What is your favorite color? <br>
+              <input type="color" name="fave-color">
+            </label>
+          </p>
+
+          <p>
+            Which is your favorite animal? Select only one. <br>
+            <label>
+              <input type="radio" name="fave-animal" value="dogs"> Dogs
+            </label>
+            <label>
+              <input type="radio" name="fave-animal" value="cats"> Cats
+            </label>
+          </p>
+
+          <p>
+            Which hobbies do you enjoy? Select all that apply. <br>
+            <label>
+              <input type="checkbox" name="hobby" value="hiking"> Hiking
+            </label>
+            <label>
+              <input type="checkbox" name="hobby" value="music"> Music
+            </label>
+            <label>
+              <input type="checkbox" name="hobby" value="video-games"> Video Games
+            </label>
+          </p>
+
+          <p>
+            <input type="submit" value="Submit My Answers!">
+          </p>
+        </fieldset>
+      </form>
+			<p id="display"></p>
+    </main>
+
+    <script>
+		const form = document.querySelector('form')
+		form.addEventListener('submit', (e) => {
+			e.preventDefault()
+
+			const text = document.querySelector('input[name=firstname]')
+			const email = document.querySelector('input[name=email]')
+			const number = document.querySelector('input[name=siblings]')
+			const date = document.querySelector('input[name=birthdate]')
+			const select = document.querySelector('select[name=beverage]')
+			const color = document.querySelector('input[name=fave-color]')
+			
+			let pet = ''
+			const radio = Array.from(document.querySelectorAll('input[name=fave-animal]'))
+			radio.forEach((b) => {
+				if (b.checked) {
+					pet = b.value
+				}
+			})
+
+			let hobbies = ''
+			const checkbox = Array.from(document.querySelectorAll('input[name=hobby]'))
+			checkbox.forEach((b) => {
+				if (b.checked) {
+					hobbies += b.value + ' '
+				}
+			})
+
+			const results = `${text.value} is an amazing developer with ${number.value} siblings, born in ${date.value} who drinks ${select.value} from a ${color.value} coffee mug with ${pet} by their side, while they work on ${hobbies}`
+			document.getElementById('display').innerHTML = results
+			console.log(results);
+		});
+	</script>
+
+  </body>
+</html>

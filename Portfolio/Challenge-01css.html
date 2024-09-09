@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android - Example</title>
+    <style>
+      /* Typography */
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1, h2, h3, h4 {
+        font-weight: bold;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        color: #0288D1;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 2em;
+        color: #03A9F4;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      h4 {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+      }
+
+      /* Layout */
+      nav ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        padding: 0;
+        background-color: #0288D1;
+        margin: 0;
+      }
+
+      nav ul li {
+        margin: 0;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        display: block;
+      }
+
+      nav ul li a:hover {
+        background-color: #03A9F4;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      section {
+        padding: 20px;
+        margin: 20px 10px;
+        background-color: white;
+        border: 2px solid #E0E0E0;
+        border-radius: 8px;
+      }
+
+      header {
+        margin-bottom: 20px;
+      }
+
+      p, ul {
+        margin-bottom: 15px;
+      }
+
+      /* Flex layout for phones section */
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      ul li {
+        list-style: none;
+        width: 165px;
+        margin-bottom: 20px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border: 2px solid #E0E0E0;
+        border-radius: 5px;
+      }
+
+      button {
+        background-color: #0288D1;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 1em;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #03A9F4;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      /* Featured section */
+      section#featured {
+        background-color: #F1F8E9;
+        border-color: #A5D6A7;
+        border-width: 3px;
+        border-style: solid;
+      }
+
+      /* Popular Picks section */
+      section#popular-picks {
+        background-color: #E3F2FD;
+        border-color: #90CAF9;
+        border-width: 3px;
+        border-style: solid;
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 20px;
+      }
+
+      /* Margin and padding adjustments */
+      .container {
+        padding: 20px;
+      }
+
+      .main-header {
+        padding: 20px;
+        background-color: #0288D1;
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>Android</h1>
+      <nav>
+        <ul>
+          <li><a href="#phones-tablets">Phones &amp; Tablets</a></li>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#latest-greatest">Latest Greatest</a></li>
+          <li><a href="#android-one">Android One</a></li>
+          <li><a href="#popular-picks">Popular Picks</a></li>
+          <li><a href="#featured-tablets">Featured Tablets</a></li>
+          <li><a href="#android-for-business">Android for Business</a></li>
+          <li><a href="#android-go">Android Go (Edition)</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <!-- Phones & Tablets -->
+      <section id="phones-tablets">
+        <header>
+          <h2>Phones &amp; Tablets</h2>
+          <p>If you want it,<br> Android<br> powers it.</p>
+        </header>
+      </section>
+
+      <!-- Featured -->
+      <section id="featured">
+        <header>
+          <h2>FEATURED</h2>
+          <h3>Google Pixel 3a</h3>
+        </header>
+
+        <p>A fullscreen 5.6&rdquo; or 6&rdquo; display. Up to 30 hours of battery life<sup>1</sup>. And a camera that does the work for you &mdash; with Night Sight, Portrait Mode, and built-in Depth Editor.</p>
+
+        <footer>
+          <p><button>LEARN MORE</button></p>
+        </footer>
+      </section>
+
+      <!-- Latest Greatest -->
+      <section id="latest-greatest">
+        <header>
+          <h2>LATEST AND GREATEST</h2>
+          <h3>The world&rsquo;s<br>first 5G<br>phones.</h3>
+        </header>
+
+        <p>Download a 4K movie in the blink of an eye. Jump on a group video call that never lags. Turn your living room into an AR zombie apocalypse. 5G is taking phones to the next level &mdash; and they&rsquo;re only built on Android.</p>
+
+        <ul>
+          <li><img src="../images/samsung-galaxy-10-5g.png" alt="Samsung Galaxy 10 5G" width="165px"><h4>Samsung</h4><span>Galaxy 10 5G</span></li>
+          <li><img src="../images/lg-v50-thinq-5g.png" alt="LG V50 ThinQ 5G" width="165px"><h4>LG</h4><span>V50 ThinQ 5G</span></li>
+          <li><img src="../images/xiaomi-mi-mix-3-5g.png" alt="Xiaomi Mi Mix 3 5G" width="165px"><h4>Xiaomi</h4><span>Mi Mix 3 5G</span></li>
+          <li><img src="../images/oppo-reno-5g.png" alt="Oppo Reno 5G" width="165px"><h4>Oppo</h4><span>Reno 5G</span></li>
+        </ul>
+      </section>
+
+      <!-- Android One -->
+      <section id="android-one">
+        <header>
+          <h2>ANDROID ONE</h2>
+        </header>
+
+        <p>Secure, up-to-date, and easy to use.</p>
+        <footer><p><button>Learn more</button></p></footer>
+      </section>
+
+      <!-- Popular Picks -->
+      <section id="popular-picks">
+        <header>
+          <h2>POPULAR PICKS</h2>
+          <h3>Cameras that catch any shot.</h3>
+        </header>
+        <p>Android powers some of the world&rsquo;s top cameras. So when the action speeds up or the lights go down low, you always get that perfect shot.</p>
+
+        <ul>
+          <li><img src="../images/google-pixel-3a.png" alt="Google Pixel 3a" width="165px"><h4>Google</h4><span>Pixel 3a</span></li>
+          <li><img src="../images/motorola-moto-g7.png" alt="Motorola Moto G7" width="165px"><h4>Motorola</h4><span>Moto G7</span></li>
+          <li><img src="../images/oneplus-6t.png" alt="OnePlus 6T" width="165px"><h4>OnePlus</h4><span>6T</span></li>
+          <li><img src="../images/sony-xperia-1.png" alt="Sony Xperia 1" width="165px"><h4>Sony</h4><span>Xperia 1</span></li>
+        </ul>
+      </section>
+
+      <!-- Featured Tablets -->
+      <section id="featured-tablets">
+        <header>
+          <h2>FEATURED TABLETS</h2>
+          <h3>Sometimes you need a bigger screen.</h3>
+        </header>
+        <p>Watch a show the way it was intended. Edit a photo all the way down to the pixels. With Android tablets, you get more screen to do your thing.</p>
+
+        <ul>
+          <li><img src="../images/samsung-galaxy-tab-s4.png" alt="Samsung Galaxy Tab S4" width="318px"><h4>Samsung</h4><span>Galaxy Tab S4</span></li>
+          <li><img src="../images/lenovo-tab-p10.png" alt="Lenovo Tab P10" width="318px"><h4>Lenovo</h4><span>Tab P10</span></li>
+          <li><img src="../images/lenovo-tab-p10-plus.png" alt="Lenovo Tab P10 Plus" width="318px"><h4>Lenovo</h4><span>Tab P10 Plus</span></li>
+        </ul>
+      </section>
+
+      <!-- Android For Business -->
+      <section id="android-for-business">
+        <header>
+          <h2>ANDROID FOR BUSINESS</h2>
+        </header>
+        <p>Put Android to work. Use the work profile to keep your personal data separate. Turn off work apps when you want to disconnect. And with the Android Enterprise Recommended program, it's easy to find the right devices for your job. From construction sites to corporate offices.</p>
+        <footer><p><button>Learn more</button></p></footer>
+      </section>
+
+      <!-- Android Go -->
+      <section id="android-go">
+        <header>
+          <h2>ANDROID (GO EDITION)</h2>
+          <h3>Less RAM.<br>Still loaded<br>with power.</h3>
+        </header>
+        <p>Get the best of Android on lower RAM devices. Reimagined apps like YouTube Go and Google Go take up less space and start up faster. Data Saver helps you manage your data. And the Play Store continually gets new apps made just for Android (Go edition).</p>
+
+        <ul>
+          <li><img src="../images/techno-spark-2.png" alt="Tecno Spark 2" width="165px"><h4>Tecno</h4><span>Spark 2</span></li>
+          <li><img src="../images/nokia-1-plus.png" alt="Nokia 1 Plus" width="165px"><h4>Nokia</h4><span>1 Plus</span></li>
+          <li><img src="../images/lava-z50.png" alt="Lava Z50" width="165px"><h4>Lava</h4><span>Z50</span></li>
+          <li><img src="../images/lenovo-moto-e5-play.png" alt="Lenovo Moto E5 Play" width="165px"><h4>Lenovo Moto</h4><span>E5 Play</span></li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
