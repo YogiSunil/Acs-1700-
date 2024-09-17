@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Menu -->
+    <header>
+        <nav>
+            <h1>Welcome to My Portfolio</h1>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://www.linkedin.com/in/sunil-nath-79b1aa310/" target="_blank">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <h1>Hi, I'm Sunil, <span class="typed-text">Web Developer!!</span></h1>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="welcome">
+        <h2>About</h2>
+        <p>Hello, I am Sunil, currently studying Applied Computer Science at Dominican University of California. I am passionate about creating things that live on the internet and aspire to be a Developer.</p>
+    </section>
+
+    <!-- Project Filtering -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="filter-buttons">
+            <input type="radio" name="filter" id="filter-all" checked>
+            <label for="filter-all" class="filter-button">All</label>
+    
+            <input type="radio" name="filter" id="filter-frontend">
+            <label for="filter-frontend" class="filter-button">Frontend</label>
+    
+            <input type="radio" name="filter" id="filter-backend">
+            <label for="filter-backend" class="filter-button">Backend</label>
+        </div>
+    
+        <div class="projects">
+            <div class="project frontend">
+                <a href="https://github.com/YogiSunil/Acs-1700-.git" target="_blank" class="project-link">
+                    <img src="https://th.bing.com/th/id/OIP.7R4ZpppCsQ1DiKJNfPR_0QHaLH?rs=1&pid=ImgDetMain" alt="Frontend Project 1">
+                    <div class="project-title">Frontend Project 1</div>
+                </a>
+            </div>
+            <div class="project frontend">
+                <a href="https://github.com/YogiSunil/Acs-1700-.git" target="_blank" class="project-link">
+                    <img src="https://cdn.ebaumsworld.com/mediaFiles/picture/1151541/84693449.png" alt="Frontend Project 2">
+                    <div class="project-title">Frontend Project 2</div>
+                </a>
+            </div>
+            <div class="project backend">
+                <a href="https://github.com/YogiSunil/Acs-1100.git" target="_blank" class="project-link">
+                    <img src="https://th.bing.com/th/id/R.2b05140a776f25a8047c88fbe2bcbdb9?rik=nJGXGox1yqPCMA&riu=http%3a%2f%2fwww.thedesignwork.com%2fwp-content%2fuploads%2f2011%2f10%2fRandom-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg&ehk=IMQIRwGOPtTb7ZAO7L9joTJjtE5D4vBqWQ5F3i5U1cE%3d&risl=&pid=ImgRaw&r=0" alt="Backend Project 1">
+                    <div class="project-title">Backend Project 1</div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Theme Switcher -->
+    <input type="checkbox" id="theme-toggle" class="theme-toggle">
+    <label for="theme-toggle" class="theme-button">Switch Theme</label>
+  
+    <footer>
+        <p>© 2024 Sunil. All rights reserved.</p>
+    </footer>
+</body>
+</html>
