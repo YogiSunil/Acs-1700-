@@ -1,0 +1,133 @@
+/* Styling for the dashboard container */
+.dashboard {
+  width: auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 1fr 1fr;
+  grid-gap: 10px;
+}
+
+/* Title spans the entire width */
+.title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  grid-column: span 4;
+  text-align: center;
+  font-size: 24px;
+}
+
+/* Population spans 3 columns */
+.population {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-image: url('images/finland-8.jpg');
+  background-size: cover;
+  padding: 10px;
+}
+
+/* Welcome cell */
+.welcome {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-image: url('images/finland-2.jpg');
+  background-size: cover;
+  padding: 10px;
+}
+
+.welcome h2, .welcome p {
+  color: #000;
+}
+
+/* GDP cell */
+.gdp {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-image: url('images/finland-3.jpg');
+  background-size: cover;
+  padding: 10px;
+}
+
+/* Calling code cell */
+.code {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-image: url('images/finland-4.jpg');
+  background-size: cover;
+  padding: 10px;
+}
+
+.code p {
+  font-size: large;
+  color: black;
+}
+
+/* Government cell */
+.govt {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background-image: url('images/finland-1.jpg');
+  background-size: cover;
+  padding: 10px;
+}
+
+.govt h2, .govt p {
+  color: #000;
+}
+
+.govt p {
+  font-size: large;
+}
+
+/* News form cell */
+.news {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-image: url('images/finland-5.jpg');
+  background-size: cover;
+  padding: 10px;
+}
+
+/* General styles for grid cells */
+.grid-cell {
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for form elements in the news section */
+.news label, .news input, .news button {
+  margin: 5px 0;
+}
+
+/* Adjust form inputs */
+.news input {
+  padding: 5px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.news button {
+  padding: 5px 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.news button:hover {
+  background-color: #0056b3;
+}

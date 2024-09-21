@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Evolution of Video Game Consoles</title>
+		<!-- Add some JS -->
+		<!-- Animate On Scroll CSS Step 1 -->
+		<!-- https://michalsnik.github.io/aos/ -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		
+<style>
+		
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #141472, #dde0d1);
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #5c5151;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation */
+nav {
+    background-color: #1c1f4a;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 15px 15px;
+}
+
+nav h1 a {
+    color: #efb1b1;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #ffa500;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: #ffecb3;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #ffa500;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Section Styling */
+section {
+    margin: 50px 0;
+    padding: 40px;
+    background: #d9d9e5;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    font-weight: 700;
+}
+
+h2::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background-color: #ffa500;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+#atari {
+    background: #e0f7fa; 
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    margin: 50px 0; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#atari:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+#atari h2 {
+    color: #1c1f4a; 
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#atari p {
+    line-height: 1.6;
+    color: #333; 
+}
+
+#atari img {
+    width: 80%; 
+    max-width: 600px; 
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+
+
+.card {
+    background-color: #dceae1;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    color: #1c1f4a;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+#playstation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+    padding: 40px;
+    background: #d9d9e5;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+#playstation img {
+    width: 80%; 
+    max-width: 600px; 
+    border-radius: 10px;
+    margin: 20px 0; 
+}
+
+@media (max-width: 768px) {
+    #playstation img {
+        width: 100%; 
+    }
+}
+
+}
+/* Xbox Section */
+#xbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#xbox div {
+    flex: 1 1 45%;
+}
+
+#xbox img {
+    width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#xbox img:hover {
+    transform: scale(1.05);
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    background-color: #ffa500;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff8c00;
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1c1f4a;
+    color: #fff;
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+footer h2 {
+    color: #ffa500;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+footer form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+footer input, footer textarea {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    background-color: #eee;
+    transition: background-color 0.3s ease;
+}
+
+footer input:focus, footer textarea:focus {
+    background-color: #fff;
+}
+
+footer button {
+    align-self: center;
+    padding: 12px 30px;
+    background-color: #ffa500;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+footer button:hover {
+    background-color: #ff8c00;
+}
+
+/* Animation */
+[data-aos] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition-property: transform, opacity;
+    transition-duration: 0.6s;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #xbox {
+        flex-direction: column;
+    }
+}
+
+</style>
+	</head>
+	<body>
+
+		<main>
+			<nav id="nav">
+				<h1><a href="#">Game Consoles</a></h1>
+				<ul>
+					<li><a href="#atari">Atari</a></li>
+					<li><a href="#nintendo">Nintendo</a></li>
+					<li><a href="#playstation">PlayStation</a></li>
+					<li><a href="#xbox">Xbox</a></li>
+				</ul>
+			</nav>
+		
+			<section id="atari">
+				<div data-aos="fade-up">
+					<h2>Atari</h2>
+					<p>The early pioneer in gaming consoles, Atari was founded in 1972 by Nolan Bushnell and Ted Dabney. 
+					Their first major success, Pong, a simple two-player tennis game, became one of the first arcade sensations. 
+					In 1977, Atari launched the Atari 2600, a home video game console that introduced the concept of interchangeable game cartridges. 
+					This marked the beginning of the home gaming revolution, allowing players to switch between multiple games instead of being tied to a single game on a system. 
+					With hits like Space Invaders and Pac-Man, the Atari 2600 became one of the most popular consoles of the late '70s and early '80s.</p>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Atari-2600-Wood-4Sw-Set.png/1200px-Atari-2600-Wood-4Sw-Set.png" alt="">
+					<p>However, the infamous video game crash of 1983 severely impacted Atari's business. 
+					The company struggled to keep up with the influx of poor-quality games, leading to the collapse of the console market. 
+					Despite these setbacks, Atari is remembered for laying the groundwork for the modern gaming industry.</p>
+				</div>
+			</section>
+		
+			<section id="nintendo">
+				<h2 data-aos="fade-right">Nintendo</h2>
+				<ul>
+					<li class="card">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/8/82/NES-Console-Set.jpg" alt="">
+						<h3>Nintendo Entertainment System</h3>
+						<p>Released in 1985, the Nintendo Entertainment System (NES) revitalized the gaming industry after the crash of 1983. 
+						With legendary games such as Super Mario Bros., The Legend of Zelda, and Metroid, the NES redefined what video games could be, emphasizing story-driven gameplay and immersive worlds. 
+						The NES introduced millions of gamers to iconic characters, some of whom remain central to gaming today. 
+						The controller's D-pad design also became the standard for future consoles.</p>
+					</li>
+					<li class="card">
+						<img src="https://media.cdn.kaufland.de/product-images/400x400/e40dd4bc7b80233fef882129ec6bd819.webp" alt="">
+						<h3>Super Nintendo</h3>
+						<p>In 1990, Nintendo launched the Super Nintendo Entertainment System (SNES), a 16-bit console that expanded on the success of the NES. 
+						With improved graphics, sound, and a larger library of groundbreaking games like Super Mario World, The Legend of Zelda: A Link to the Past, and Donkey Kong Country, 
+						the SNES solidified Nintendo's position as a leader in the gaming industry. It was known for its vibrant color palette, Mode 7 graphics (which allowed for rotating and scaling), 
+						and timeless multiplayer games such as Super Mario Kart.</p>
+					</li>
+					<li class="card">
+						<img src="https://media.wired.com/photos/5d8a89980096db000889cbae/master/w_960,c_limit/Gear-Inline-Nintendo-Switch-Lite-2-Source-Nintendo.jpg" alt="">
+						<h3>Nintendo Switch</h3>
+						<p>The Nintendo Switch, released in 2017, introduced a hybrid console that could be used both as a home console and a portable gaming device. 
+						This versatility made the Switch incredibly popular, and it has become one of Nintendo's best-selling consoles. With iconic games such as The Legend of Zelda: Breath of the Wild, 
+						Animal Crossing: New Horizons, and Super Smash Bros. Ultimate, the Switch has cemented its place in the modern gaming landscape, offering experiences for both casual and hardcore gamers alike.</p>
+					</li>
+				</ul>
+			</section>
+		
+			<section id="playstation">
+				
+				<div data-aos="slide-right">
+					<h2>PlayStation</h2>
+					
+					<p>First launched by Sony in 1994, the PlayStation marked a turning point in gaming history. 
+					Utilizing compact discs (CDs) instead of cartridges, it allowed developers to create more complex and graphically advanced games, 
+					leading to an explosion in 3D gaming. 
+					Classics such as Final Fantasy VII, Metal Gear Solid, and Crash Bandicoot became synonymous with the PlayStation brand. 
+					The PlayStation controller's dual analog sticks also introduced a new way to interact with games.</p>
+					
+					<img src="https://gmedia.playstation.com/is/image/SIEPDC/ps5-slim-disc-console-featured-hardware-image-block-02-en-15nov23?$800px$" alt="">
+					
+					<p>The PlayStation 2, released in 2000, became the best-selling video game console of all time, with over 155 million units sold worldwide. 
+					It brought DVDs to the living room and expanded the gaming audience with games like *Grand Theft Auto III, God of War, and Shadow of the Colossus. 
+					Sony's continued innovation, from the PlayStation 3 to the PlayStation 5, has ensured that the PlayStation remains a dominant force in the gaming industry.</p>
+				</div>
+			</section>
+		
+			<section id="xbox">
+				<div>
+					<div>
+						<h2>Xbox</h2>
+						<p>Microsoft entered the console market in 2001 with the launch of the original Xbox. 
+						The Xbox was notable for its inclusion of an internal hard drive and broadband internet connectivity, allowing players to download content and engage in online multiplayer gaming. 
+						One of its most important achievements was the creation of Xbox Live, an online service that transformed how players interacted with each other in competitive and cooperative games. 
+						The release of Halo: Combat Evolved established the Xbox as a major contender in the console wars, with the Halo franchise becoming a defining part of Xbox's identity.</p>
+					</div>
+					<div>
+						<img src="https://cms-assets.xboxservices.com/assets/bc/40/bc40fdf3-85a6-4c36-af92-dca2d36fc7e5.png?n=642227_Hero-Gallery-0_A1_857x676.png" alt="">
+					</div>
+				</div>
+				
+				<p>Microsoft's second console, the Xbox 360, was released in 2005 and became a favorite for many gamers due to its strong online support, excellent game library, and the introduction of achievements. 
+				The Xbox 360 solidified Xbox Live as a premier online service, with games like Gears of War and Call of Duty dominating the multiplayer scene. 
+				The Xbox Series X, released in 2020, continues Microsoft's push for powerful hardware and an integrated gaming ecosystem, with features like Game Pass offering players a subscription service with access to hundreds of titles.</p>
+			</section>
+		
+			<footer id="contact">
+				<h2>Contact Us</h2>
+				<form>
+					<div>
+						<label>
+							<span>Name</span>
+							<input type="text" aria-label="Name">
+						</label>
+			
+						<label>
+							<span>Email</span>
+							<input type="email" aria-label="Email">
+						</label>
+					</div>
+					<div>
+						<label>
+							<span>Message</span>
+							<textarea></textarea>
+						</label>
+						<button type="submit">Send</button>
+					</div>
+				</form>
+			</footer>
+		</main>
+
+		<!-- JS Always goes at the end of body -->
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
+
+	</body>
+</html>
