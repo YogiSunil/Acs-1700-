@@ -1,0 +1,78 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f0f8ff; /* Light background color */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#q-container {
+    margin-top: 20px;
+}
+
+#flip-card {
+    width: 600px;
+    height: 400px;
+    position: relative;
+    perspective: 1000px; 
+}
+
+#q-card,
+#a-card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Hide the back side */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px;
+    background-color: #fff; /* White background for cards */
+    transition: transform 400ms; 
+}
+
+#q-card, #a-card p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#a-card {
+    transform: rotateY(180deg); 
+}
+
+#flip-card.flip #q-card {
+    transform: rotateY(180deg); 
+}
+
+#flip-card.flip #a-card {
+    transform: rotateY(0deg); 
+}
+
+.button-container {
+    display: flex;
+    justify-content: end; 
+    width: 10%;
+    margin-top: 10px;
+}
+
+button {
+    margin-left: 10px; 
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; 
+    transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+}
+
+button:hover {
+    background-color: #45a049; 
+    transform: scale(1.05); 
+}
